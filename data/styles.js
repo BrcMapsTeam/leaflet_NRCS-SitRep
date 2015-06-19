@@ -1,5 +1,6 @@
 var color1 = ["#ecf4cb","#ffe082","#ffbd13","#ff8053","#ff493d"];
 var color2 = ["#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"];
+var color3 = ["#eff3ff","#bdd7e7","#6baed6","#3182bd","#08519c"];
 
 var col_header1 = ["Dead People",
     "Missing People",
@@ -17,6 +18,17 @@ var col_header2 = [
     "Hygiene-kits",
     "Aqua-Tab",
     "Soap"];
+
+var col_header3 = [    
+    "FA",
+    "CADRE/Rescue Team",
+    "NDRT",
+    "PSS",
+    "RFL/DBM",
+    "WASH",
+    "DDRT",
+    "Other",
+    "International Delegates/Volunteers"];
 	
 function listMax(header,data){
 	var temp = [];
@@ -49,7 +61,7 @@ function getData(list,pcode,field){
 		};}
 };
 
-var col_max = listMax(col_header1,NRCS_data).concat(listMax(col_header2,NRCS_data));
+var col_max = listMax(col_header1,NRCS_data).concat(listMax(col_header2,NRCS_data)).concat(listMax(col_header3,NRCS_data));
 console.log(col_max);
 
 var getStyle = function(feature){
