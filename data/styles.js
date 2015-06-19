@@ -1,12 +1,15 @@
-var color = ["#ecf4cb","#ffe082","#ffbd13","#ff8053","#ff493d"];
+var color1 = ["#ecf4cb","#ffe082","#ffbd13","#ff8053","#ff493d"];
+var color2 = ["#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"];
 
-var col_header = ["Dead",
-    "Missing",
-    "Injured",
+var col_header1 = ["Dead People",
+    "Missing People",
+    "Injured People",
     "Affected Families",
     "Displaced Families",
-    "Fully",
-    "Partially",
+    "Fully Destroyed Houses",
+    "Partially Destroyed Houses"];
+
+var col_header2 = [
     "NFRI-Full-set",
     "Tarpaulin",
     "Blankets",
@@ -14,13 +17,18 @@ var col_header = ["Dead",
     "Hygiene-kits",
     "Aqua-Tab",
     "Soap"];
-
+	
 function listMax(header,data){
 	var temp = [];
 	header.forEach(function(entry) {
+		var data_temp = data.filter(function(o){ if(o[entry]){
+				return o[entry];}})
+				.map(function(o){return o[entry];});
+		var geostats_temp = new geostats(data_temp);
 		temp.push({field: entry, 
-				max: Math.max.apply(Math,data.map(function(o){
-				return o[entry];}))});		
+				max: geostats_temp.max(),
+				qua: geostats_temp.getClassQuantile(5),
+				sum: geostats_temp.sum()});		
 		});
 	return temp;
 };
@@ -28,84 +36,35 @@ function listMax(header,data){
 function getMax(list,field){
 	for(i in list){
 		if(list[i]["field"]==field){
-			return list[i]["max"];
+			return [list[i]["max"],list[i]["qua"]];
 		};}
 };
 
 function getData(list,pcode,field){
 	for(i in list){
+		var temp;
 		if(list[i]["Pcode"]==pcode){
-			return list[i][field];
+			if(list[i][field]){temp = list[i][field]}else{ temp = "-"}
+			return temp;
 		};}
 };
 
-var col_max = listMax(col_header,NRCS_data);
+var col_max = listMax(col_header1,NRCS_data).concat(listMax(col_header2,NRCS_data));
+console.log(col_max);
 
 var getStyle = function(feature){
 		var data = getData(NRCS_data,feature.properties.OCHA_PCODE,field);
 		var max = getMax(col_max,field);
-	    if(data>4*max/5){
-	        return {color: color[4],fillColor: color[4],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>3*max/5){
-	        return {color: color[3],fillColor: color[3],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>2*max/5){
-	        return {color: color[2],fillColor: color[2],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>max/5){
-	        return {color: color[1],fillColor: color[1],fillOpacity:0.6,opacity:0.7,weight:2};
+	    if(data>max[1][4]){
+	        return {color: color[4],fillColor: color[4],fillOpacity:0.5,opacity:0.7,weight:2};
+	    } else if(data>max[1][3]){
+	        return {color: color[3],fillColor: color[3],fillOpacity:0.5,opacity:0.7,weight:2};
+	    } else if(data>max[1][2]){
+	        return {color: color[2],fillColor: color[2],fillOpacity:0.5,opacity:0.7,weight:2};
+	    } else if(data>max[1][1]){
+	        return {color: color[1],fillColor: color[1],fillOpacity:0.5,opacity:0.7,weight:2};
 	    } else if(data>0){ 
-	    	return {color: color[0],fillColor: color[0],fillOpacity:0.6,opacity:0.7,weight:2};
-		} else {
-	    	return {"color": "none","opacity":1};
-		}
-};
-
-
-var watStyle = function(feature){
-		var field = "Dead";
-		var data = getData(NRCS_data,feature.properties.OCHA_PCODE,field);
-		var max = getMax(col_max,field);
-	    if(data>4*max/5){
-	        return {color: color[4],fillColor: color[4],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>3*max/5){
-	        return {color: color[3],fillColor: color[3],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>2*max/5){
-	        return {color: color[2],fillColor: color[2],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>max/5){
-	        return {color: color[1],fillColor: color[1],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(data>0){ 
-	    	return {color: color[0],fillColor: color[0],fillOpacity:0.6,opacity:0.7,weight:2};
-		} else {
-	    	return {"color": "none","opacity":1};
-		}
-};
-
-var sanStyle = function(feature){
-	    if(feature.properties.san_cov>0.8){
-	        return {color: color[0],fillColor: color[0],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.san_cov>0.6){
-	        return {color: color[1],fillColor: color[1],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.san_cov>0.4){
-	        return {color: color[2],fillColor: color[2],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.san_cov>0.2){
-	        return {color: color[3],fillColor: color[3],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.san_cov>0){ 
-	    	return {color: color[4],fillColor: color[4],fillOpacity:0.6,opacity:0.7,weight:2};
-		} else {
-	    	return {"color": "none","opacity":1};
-		}
-};
-
-var hygStyle = function(feature){
-	    if(feature.properties.hyg_cov>0.8){
-	        return {color: color[0],fillColor: color[0],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.hyg_cov>0.6){
-	        return {color: color[1],fillColor: color[1],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.hyg_cov>0.4){
-	        return {color: color[2],fillColor: color[2],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.hyg_cov>0.2){
-	        return {color: color[3],fillColor: color[3],fillOpacity:0.6,opacity:0.7,weight:2};
-	    } else if(feature.properties.hyg_cov>0){ 
-	    	return {color: color[4],fillColor: color[4],fillOpacity:0.6,opacity:0.7,weight:2};
+	    	return {color: color[0],fillColor: color[0],fillOpacity:0.5,opacity:0.7,weight:2};
 		} else {
 	    	return {"color": "none","opacity":1};
 		}
