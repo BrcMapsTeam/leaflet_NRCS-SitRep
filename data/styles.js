@@ -1,6 +1,6 @@
 var color1 = ["#ecf4cb","#ffe082","#ffbd13","#ff8053","#ff493d"];
-var color2 = ["#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"];
-var color3 = ["#eff3ff","#bdd7e7","#6baed6","#3182bd","#08519c"];
+var color2 = ["#e3f2de","#bae4b3","#74c476","#31a354","#006d2c"];
+var color3 = ["#e4e8f4","#bdd7e7","#6baed6","#3182bd","#08519c"];
 
 var col_header1 = ["Dead People",
     "Missing People",
