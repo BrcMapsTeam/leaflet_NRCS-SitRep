@@ -63,7 +63,6 @@ function getData(list,pcode,field){
 };
 
 var col_max = listMax(col_header1,NRCS_data).concat(listMax(col_header2,NRCS_data)).concat(listMax(col_header3,NRCS_data));
-console.log(col_max);
 
 var getStyle = function(feature){
 		var data = getData(NRCS_data,feature.properties.OCHA_PCODE,field);

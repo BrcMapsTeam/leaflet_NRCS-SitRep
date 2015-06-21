@@ -170,7 +170,6 @@ function zoomToFeature(e) {
 		}else{
 		temp = e.target.getBounds();
 		window.zoomed = e.target.feature.properties.OCHA_PCODE;}
-	console.log(temp);
 	map1.unsync(map2);
 	map1.unsync(map3);
 	map2.unsync(map1);
@@ -186,7 +185,6 @@ function zoomToFeature(e) {
 	map2.sync(map3);
 	map3.sync(map1);
 	map3.sync(map2);
-	console.log(window.zoomed);
 }		
 
 function onMouseOver(e) {
