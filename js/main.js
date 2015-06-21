@@ -1,22 +1,29 @@
 function init(){
 
     var base_osm1 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
+    		'http://{s}x={x}&y={y}&z={z}',{
+			subdomains: ['openmapsurfer.uni-hd.de/tiles/roads/', 
+				'korona.geog.uni-heidelberg.de/tiles/roads/', 
+				'129.206.74.245:8001/tms_r.ashx?'],
 			minZoom: 2,
-			maxZoom: 18}
-    );
-	var base_osm2 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
+			maxZoom: 18});
+    
+	var base_osm2 =  L.tileLayer(
+    		'http://{s}x={x}&y={y}&z={z}',{
+    		subdomains: ['openmapsurfer.uni-hd.de/tiles/roads/', 
+				'korona.geog.uni-heidelberg.de/tiles/roads/', 
+				'129.206.74.245:8001/tms_r.ashx?'],
 			minZoom: 2,
-			maxZoom: 18}
-    );
-    var base_osm3 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
+			maxZoom: 18});
+			
+    var base_osm3 =  L.tileLayer(
+    		'http://{s}x={x}&y={y}&z={z}',{
+    		subdomains: ['openmapsurfer.uni-hd.de/tiles/roads/', 
+				'korona.geog.uni-heidelberg.de/tiles/roads/', 
+				'129.206.74.245:8001/tms_r.ashx?'],
 			minZoom: 2,
-			maxZoom: 18,
-			attribution: 'Basemap: <a href="http://giscience.uni-hd.de/">Heidelberg Uni.</a> & &copy; <a href="http://www.openstreetmap.org/copyright">OSM</a>'}
-    );
-	
+			maxZoom: 18});
+
 	function getLayers(list,color_list){
 		var temp_list = [];
 		window.color = color_list;
@@ -249,6 +256,7 @@ var map1 = maps[0];
 var map2 = maps[1];
 var map3 = maps[2];
 var bounds = map1.getBounds();
+console.log(bounds);
 var zoomed = NaN;
 
 document.getElementById("dmg_full_1").innerHTML = parseInt( col_max[0].sum ).toLocaleString();
