@@ -54,11 +54,8 @@ function init(){
     });
 		
 	map1.sync(map2);
-	map1.sync(map3);
-	map2.sync(map1);
 	map2.sync(map3);
 	map3.sync(map1);
-	map3.sync(map2);
 	
 	function getControl(list_names,list_layers){
 		var temp =[];
@@ -168,20 +165,14 @@ function zoomToFeature(e) {
 		window.zoomed = e.target.feature.properties.OCHA_PCODE;}
 	console.log(temp);
 	map1.unsync(map2);
-	map1.unsync(map3);
-	map2.unsync(map1);
 	map2.unsync(map3);
 	map3.unsync(map1);
-	map3.unsync(map2);
-    map1.fitBounds(temp);
+    	map1.fitBounds(temp);
 	map2.fitBounds(temp);
 	map3.fitBounds(temp);
 	map1.sync(map2);
-	map1.sync(map3);
-	map2.sync(map1);
 	map2.sync(map3);
 	map3.sync(map1);
-	map3.sync(map2);
 	console.log(window.zoomed);
 }		
 
