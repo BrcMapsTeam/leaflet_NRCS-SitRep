@@ -1,20 +1,24 @@
 function init(){
-	
+
+var OpenMapSurfer_Roads = L.tileLayer('http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
+	maxZoom: 20,
+	attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});	
     var base_osm1 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roadsg/x={x}&y={y}&z={z}',{
+    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
 			minZoom: 2,
 			maxZoom: 18}
     );
 	var base_osm2 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roadsg/x={x}&y={y}&z={z}',{
+    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
 			minZoom: 2,
 			maxZoom: 18}
     );
     var base_osm3 = L.tileLayer(
-    		'http://openmapsurfer.uni-hd.de/tiles/roadsg/x={x}&y={y}&z={z}',{
+    		'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}',{
 			minZoom: 2,
 			maxZoom: 18,
-			attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data NRCS + &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
+			attribution: 'Basemap: <a href="http://giscience.uni-hd.de/">Heidelberg Uni.</a> & &copy; <a href="http://www.openstreetmap.org/copyright">OSM</a>'}
     );
 	
 	function getLayers(list,color_list){

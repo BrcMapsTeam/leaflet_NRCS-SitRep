@@ -9,7 +9,7 @@
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
         <link href='css/map.css' rel='stylesheet' />
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <link rel="stylesheet" href="css/leaflet.css" />
         <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 		<script src="js/L.Map.Sync.js"></script>
 		<script src="js/geostats.min.js"></script>
@@ -54,7 +54,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<br />
-					<p>Choose layers to add and remove using the button on the top right of the maps. Hover the maps with the house to display figures at District level.</p>
+					<p  align="center">Choose layers to show using the button on the top right of the maps. Hover the maps with the house to display figures at District level.</p>
 					<br />
 				</div>
 			</div>
@@ -68,8 +68,8 @@
 				<div class="col-md-4">
 					<br />
 					<div class="row">
-						<div id="dmg_dis" class="col-md-4"><b>District</b></div>
-						<div class="col-md-3"><b>Total</b></div>
+						<div id="dmg_dis" class="col-md-4" align="right"><b>District</b></div>
+						<div class="col-md-3" align="right"><b>Total</b></div>
 						<div class="col-md-5"><b>Damage Type</b></div>
 						<div class="line"><br /></div>
 						<div id="dmg_dis_1" class="col-md-4"  align="right">-</div>
@@ -106,8 +106,8 @@
 					<br />
 					<div>
 					<div class="row">						
-						<div id="dist_dis" class="col-md-4"><b>District</b></div>
-						<div class="col-md-3"><b>Total</b></div>
+						<div id="dist_dis" class="col-md-4" align="right"><b>District</b></div>
+						<div class="col-md-3" align="right"><b>Total</b></div>
 						<div class="col-md-5"><b>Distributed Item</b></div>
 						<div class="line"><br /></div>
 						<div id="dist_dis_1" class="col-md-4"  align="right">-</div>
@@ -148,8 +148,8 @@
 					<br />
 					<div>
 					<div class="row">					
-						<div id="vol_dis" class="col-md-4"><b>District</b></div>
-						<div class="col-md-3"><b>Total</b></div>
+						<div id="vol_dis" class="col-md-4" align="right"><b>District</b></div>
+						<div class="col-md-3" align="right"><b>Total</b></div>
 						<div class="col-md-5"><b>Responders</b></div>
 						<div class="line"><br /></div>
 						<div id="vol_dis_1" class="col-md-4"  align="right">-</div>
@@ -186,6 +186,7 @@
 				</div>
 			</div>
         </div>
+        <p class="subtitle" align="center"><br />The maps used do not imply the expression of any opinion on the part of the International Federation of Red Cross and Red Crescent Societies or National Societies concerning the legal status of a territory or of its authorities.<p/>
         <script src="js/main.js"></script>
     </body>
 </html>
