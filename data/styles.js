@@ -28,7 +28,8 @@ var col_header3 = [
     "WASH",
     "DDRT",
     "Other",
-    "International Delegates/Volunteers"];
+    "International Delegates/Volunteers",
+    "All"];
 	
 function listMax(header,data){
 	var temp = [];
