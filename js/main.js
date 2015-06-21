@@ -22,7 +22,9 @@ function init(){
 				'korona.geog.uni-heidelberg.de/tiles/roads/', 
 				'129.206.74.245:8001/tms_r.ashx?'],
 			minZoom: 2,
-			maxZoom: 18});
+			maxZoom: 18,
+    			attribution: 'Basemap: <a href="http://129.206.74.245/contact.html">Heidelberg U.</a> and <a href="http://www.openstreetmap.org/copyright">OSM</a>'
+    		});
 
 	function getLayers(list,color_list){
 		var temp_list = [];
