@@ -50,7 +50,7 @@ function init(){
 	var map3 = L.map('map3', {
         center: [27.7, 85.3],
         zoom: 7,
-        layers: [base_osm3,all_layers3[0]]
+        layers: [base_osm3,all_layers3[9]]
     });
 		
 	map1.sync(map2);
@@ -141,7 +141,7 @@ function init(){
     legends1.addTo(map1);
 	var init_field = "Tarpaulin";
 	legends2.addTo(map2);
-	var init_field = "FA";
+	var init_field = "All";
 	legends3.addTo(map3);
     
     return [map1,map2,map3];    
@@ -210,8 +210,9 @@ function onMouseOver(e) {
 	document.getElementById("vol_dis_5").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"RFL/DBM").toLocaleString();
 	document.getElementById("vol_dis_6").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"WASH").toLocaleString();
 	document.getElementById("vol_dis_7").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"DDRT").toLocaleString();
-	document.getElementById("vol_dis_6").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Other").toLocaleString();
-	document.getElementById("vol_dis_7").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"International Delegates/Volunteers").toLocaleString();
+	document.getElementById("vol_dis_8").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Other").toLocaleString();
+	document.getElementById("vol_dis_9").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"International Delegates/Volunteers").toLocaleString();
+	document.getElementById("vol_dis_10").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"All").toLocaleString();
 }
 
 function onMouseOut() {
@@ -241,6 +242,7 @@ function onMouseOut() {
 	document.getElementById("vol_dis_7").innerHTML = "-";
 	document.getElementById("vol_dis_8").innerHTML = "-";
 	document.getElementById("vol_dis_9").innerHTML = "-";
+	document.getElementById("vol_dis_10").innerHTML = "-";
 }
 
     
@@ -274,3 +276,4 @@ document.getElementById("vol_full_6").innerHTML = parseInt( col_max[19].sum ).to
 document.getElementById("vol_full_7").innerHTML = parseInt( col_max[20].sum ).toLocaleString();
 document.getElementById("vol_full_8").innerHTML = parseInt( col_max[21].sum ).toLocaleString();
 document.getElementById("vol_full_9").innerHTML = parseInt( col_max[22].sum ).toLocaleString();
+document.getElementById("vol_full_10").innerHTML = parseInt( col_max[23].sum ).toLocaleString();
