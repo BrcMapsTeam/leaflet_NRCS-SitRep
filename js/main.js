@@ -209,7 +209,7 @@ function onMouseOver(e) {
 		var temp_data2 = temp_data1 ? temp_data1 : 0;
 		var temp_id1 = "dmg_dis_"+k.toString();
 		var temp_id2 = "dmg_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/,/g, ""))*100);
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
 		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
 		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
 		"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
@@ -220,7 +220,7 @@ function onMouseOver(e) {
 		var temp_data2 = temp_data1 ? temp_data1 : 0;
 		var temp_id1 = "dist_dis_"+k.toString();
 		var temp_id2 = "dist_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/,/g, ""))*100);
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
 		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
 		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
 		"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
@@ -231,7 +231,7 @@ function onMouseOver(e) {
 		var temp_data2 = temp_data1 ? temp_data1 : 0;
 		var temp_id1 = "vol_dis_"+k.toString();
 		var temp_id2 = "vol_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/,/g, ""))*100);
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
 		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
 		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
 		"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";

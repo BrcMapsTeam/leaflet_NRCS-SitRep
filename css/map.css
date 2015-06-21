@@ -19,6 +19,17 @@
   border-radius: 3px;
 }
 
+.styled1 progress::-webkit-progress-bar {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.styled1 progress::-webkit-progress-value {
+  background-color: #ff493d;
+  border-radius: 3px;
+}
+
 .styled2 {
 	line-height:25%;
 }
@@ -40,6 +51,17 @@
   border-radius: 3px;
 }
 
+.styled2 progress::-webkit-progress-bar {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.styled2 progress::-webkit-progress-value {
+  background-color: #006d2c;
+  border-radius: 3px;
+}
+
 .styled3 {
 	line-height:25%;
 }
@@ -57,6 +79,17 @@
 }
 
 .styled3 progress::-moz-progress-bar {
+  background-color: #08519c;
+  border-radius: 3px;
+}
+
+.styled3 progress::-webkit-progress-bar {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.styled3 progress::-webkit-progress-value {
   background-color: #08519c;
   border-radius: 3px;
 }
