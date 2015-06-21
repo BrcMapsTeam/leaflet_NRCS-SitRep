@@ -204,64 +204,63 @@ function zoomToFeature(e) {
 
 function onMouseOver(e) {
 	document.getElementById("dmg_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
-	document.getElementById("dmg_dis_1").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Dead People").toLocaleString();
-	document.getElementById("dmg_dis_2").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Missing People").toLocaleString();
-	document.getElementById("dmg_dis_3").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Injured People").toLocaleString();
-	document.getElementById("dmg_dis_4").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Affected Families").toLocaleString();
-	document.getElementById("dmg_dis_5").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Displaced Families").toLocaleString();
-	document.getElementById("dmg_dis_6").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Fully Destroyed Houses").toLocaleString();
-	document.getElementById("dmg_dis_7").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Partially Destroyed Houses").toLocaleString();
-	document.getElementById("dist_dis_1").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"NFRI-Full-set").toLocaleString();
-	document.getElementById("dist_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";	
-	document.getElementById("dist_dis_2").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Tarpaulin").toLocaleString();
-	document.getElementById("dist_dis_3").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Blankets").toLocaleString();
-	document.getElementById("dist_dis_4").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"ORS").toLocaleString();
-	document.getElementById("dist_dis_5").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Hygiene-kits").toLocaleString();
-	document.getElementById("dist_dis_6").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Aqua-Tab").toLocaleString();
-	document.getElementById("dist_dis_7").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Soap").toLocaleString();
+	for(k=1;k<8;k++){
+		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header1[(k-1)]);
+		var temp_data2 = temp_data1 ? temp_data1 : 0;
+		var temp_id1 = "dmg_dis_"+k.toString();
+		var temp_id2 = "dmg_full_"+k.toString();
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+		"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+	 }
+	document.getElementById("dist_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
+	for(k=1;k<8;k++){
+		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header2[(k-1)]);
+		var temp_data2 = temp_data1 ? temp_data1 : 0;
+		var temp_id1 = "dist_dis_"+k.toString();
+		var temp_id2 = "dist_full_"+k.toString();
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+		"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+	 }	
 	document.getElementById("vol_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
-	document.getElementById("vol_dis_1").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"FA").toLocaleString();
-	document.getElementById("vol_dis_2").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"CADRE/Rescue Team").toLocaleString();
-	document.getElementById("vol_dis_3").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"NDRT").toLocaleString();
-	document.getElementById("vol_dis_4").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"PSS").toLocaleString();
-	document.getElementById("vol_dis_5").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"RFL/DBM").toLocaleString();
-	document.getElementById("vol_dis_6").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"WASH").toLocaleString();
-	document.getElementById("vol_dis_7").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"DDRT").toLocaleString();
-	document.getElementById("vol_dis_8").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"Other").toLocaleString();
-	document.getElementById("vol_dis_9").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"International Delegates/Volunteers").toLocaleString();
-	document.getElementById("vol_dis_10").innerHTML = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,"All").toLocaleString();
+	for(k=1;k<11;k++){
+		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header3[(k-1)]);
+		var temp_data2 = temp_data1 ? temp_data1 : 0;
+		var temp_id1 = "vol_dis_"+k.toString();
+		var temp_id2 = "vol_full_"+k.toString();
+		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+		"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+	 }	
 }
 
 function onMouseOut() {
 	document.getElementById("dmg_dis").innerHTML = "<b>District<b/>";
-	document.getElementById("dmg_dis_1").innerHTML = "-";
-	document.getElementById("dmg_dis_2").innerHTML = "-";
-	document.getElementById("dmg_dis_3").innerHTML = "-";
-	document.getElementById("dmg_dis_4").innerHTML = "-";
-	document.getElementById("dmg_dis_5").innerHTML = "-";
-	document.getElementById("dmg_dis_6").innerHTML = "-";
-	document.getElementById("dmg_dis_7").innerHTML = "-";
-	document.getElementById("dist_dis_1").innerHTML = "-";
-	document.getElementById("dist_dis").innerHTML = "<b>District<b/>";	
-	document.getElementById("dist_dis_2").innerHTML = "-";
-	document.getElementById("dist_dis_3").innerHTML = "-";
-	document.getElementById("dist_dis_4").innerHTML = "-";
-	document.getElementById("dist_dis_5").innerHTML = "-";
-	document.getElementById("dist_dis_6").innerHTML = "-";
-	document.getElementById("dist_dis_7").innerHTML = "-";
+	for(k=1;k<8;k++){
+		var temp_id1 = "dmg_dis_"+k.toString();
+		var temp_value = 0;
+		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+		"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+	 }
+	document.getElementById("dist_dis").innerHTML = "<b>District<b/>";
+	for(k=1;k<8;k++){
+		var temp_id1 = "dist_dis_"+k.toString();
+		var temp_value = 0;
+		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+		"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+	}	
 	document.getElementById("vol_dis").innerHTML = "<b>District<b/>";
-	document.getElementById("vol_dis_1").innerHTML = "-";
-	document.getElementById("vol_dis_2").innerHTML = "-";
-	document.getElementById("vol_dis_3").innerHTML = "-";
-	document.getElementById("vol_dis_4").innerHTML = "-";
-	document.getElementById("vol_dis_5").innerHTML = "-";
-	document.getElementById("vol_dis_6").innerHTML = "-";
-	document.getElementById("vol_dis_7").innerHTML = "-";
-	document.getElementById("vol_dis_8").innerHTML = "-";
-	document.getElementById("vol_dis_9").innerHTML = "-";
-	document.getElementById("vol_dis_10").innerHTML = "-";
+	for(k=1;k<11;k++){
+		var temp_id1 = "vol_dis_"+k.toString();
+		var temp_value = 0;
+		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+		"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+	}
 }
-
     
 var maps = init();
 var map1 = maps[0];
@@ -271,27 +270,21 @@ var bounds = map1.getBounds();
 console.log(bounds);
 var zoomed = NaN;
 
-document.getElementById("dmg_full_1").innerHTML = parseInt( col_max[0].sum ).toLocaleString();
-document.getElementById("dmg_full_2").innerHTML = parseInt( col_max[1].sum ).toLocaleString();
-document.getElementById("dmg_full_3").innerHTML = parseInt( col_max[2].sum ).toLocaleString();
-document.getElementById("dmg_full_4").innerHTML = parseInt( col_max[3].sum ).toLocaleString();
-document.getElementById("dmg_full_5").innerHTML = parseInt( col_max[4].sum ).toLocaleString();
-document.getElementById("dmg_full_6").innerHTML = parseInt( col_max[5].sum ).toLocaleString();
-document.getElementById("dmg_full_7").innerHTML = parseInt( col_max[6].sum ).toLocaleString();
-document.getElementById("dist_full_1").innerHTML = parseInt( col_max[7].sum ).toLocaleString();
-document.getElementById("dist_full_2").innerHTML = parseInt( col_max[8].sum ).toLocaleString();
-document.getElementById("dist_full_3").innerHTML = parseInt( col_max[9].sum ).toLocaleString();
-document.getElementById("dist_full_4").innerHTML = parseInt( col_max[10].sum ).toLocaleString();
-document.getElementById("dist_full_5").innerHTML = parseInt( col_max[11].sum ).toLocaleString();
-document.getElementById("dist_full_6").innerHTML = parseInt( col_max[12].sum ).toLocaleString();
-document.getElementById("dist_full_7").innerHTML = parseInt( col_max[13].sum ).toLocaleString();
-document.getElementById("vol_full_1").innerHTML = parseInt( col_max[14].sum ).toLocaleString();
-document.getElementById("vol_full_2").innerHTML = parseInt( col_max[15].sum ).toLocaleString();
-document.getElementById("vol_full_3").innerHTML = parseInt( col_max[16].sum ).toLocaleString();
-document.getElementById("vol_full_4").innerHTML = parseInt( col_max[17].sum ).toLocaleString();
-document.getElementById("vol_full_5").innerHTML = parseInt( col_max[18].sum ).toLocaleString();
-document.getElementById("vol_full_6").innerHTML = parseInt( col_max[19].sum ).toLocaleString();
-document.getElementById("vol_full_7").innerHTML = parseInt( col_max[20].sum ).toLocaleString();
-document.getElementById("vol_full_8").innerHTML = parseInt( col_max[21].sum ).toLocaleString();
-document.getElementById("vol_full_9").innerHTML = parseInt( col_max[22].sum ).toLocaleString();
-document.getElementById("vol_full_10").innerHTML = parseInt( col_max[23].sum ).toLocaleString();
+for(k=1;k<8;k++){
+	document.getElementById("dmg_full_"+k).innerHTML = parseInt( col_max[k-1].sum ).toLocaleString() + 
+							"<div style='line-height:40%' class='styled1' align='right'><progress value='"+100+"' max='"+100+"'></progress></div></div>";
+	document.getElementById("dmg_dis_"+k).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+							"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress value='"+0+"' max='"+100+"'></progress></div></div>";
+}
+for(k=1;k<8;k++){
+document.getElementById("dist_full_"+k).innerHTML = parseInt( col_max[k+6].sum ).toLocaleString() + 
+							"<div style='line-height:40%' class='styled2' align='right'><progress value='"+100+"' max='"+100+"'></progress></div></div>";
+	document.getElementById("dist_dis_"+k).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+							"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress value='"+0+"' max='"+100+"'></progress></div></div>";
+}
+for(k=1;k<11;k++){
+document.getElementById("vol_full_"+k).innerHTML = parseInt( col_max[k+13].sum ).toLocaleString() + 
+							"<div style='line-height:40%' class='styled3' align='right'><progress value='"+100+"' max='"+100+"'></progress></div></div>";
+	document.getElementById("vol_dis_"+k).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+							"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress value='"+0+"' max='"+100+"'></progress></div></div>";
+}
