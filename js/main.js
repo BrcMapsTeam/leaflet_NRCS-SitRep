@@ -106,7 +106,11 @@ function init(){
 	legends1.update1 = function (field){
 		if(!(field)){field = init_field}
 		var max = getMax(col_max,field);
-		var labels = [max[1][4]+1 + " - " + max[0],max[1][3]+1 + " - " + max[1][4],max[1][2]+1 + " - " + max[1][3],max[1][1]+1 +" - " + max[1][2],"1 - " + max[1][1]];
+		var labels = [(max[1][4]+1).toLocaleString() + " - " + (max[0]).toLocaleString(),
+					(max[1][3]+1).toLocaleString() + " - " + (max[1][4]).toLocaleString(),
+					(max[1][2]+1).toLocaleString() + " - " + (max[1][3]).toLocaleString(),
+					(max[1][1]+1).toLocaleString() +" - " + (max[1][2]).toLocaleString(),
+					"1 - " + (max[1][1]).toLocaleString()];
 		var html = "<p><b>"+ field +"</b></p>";
 		var color = color1
 		for(i=0;i<5;i++){
@@ -116,7 +120,11 @@ function init(){
 	legends2.update2 = function (field){
 		if(!(field)){field = init_field}
 		var max = getMax(col_max,field);
-		var labels = [max[1][4]+1 + " - " + max[0],max[1][3]+1 + " - " + max[1][4],max[1][2]+1 + " - " + max[1][3],max[1][1]+1 +" - " + max[1][2],"1 - " + max[1][1]];
+		var labels = [(max[1][4]+1).toLocaleString() + " - " + (max[0]).toLocaleString(),
+					(max[1][3]+1).toLocaleString() + " - " + (max[1][4]).toLocaleString(),
+					(max[1][2]+1).toLocaleString() + " - " + (max[1][3]).toLocaleString(),
+					(max[1][1]+1).toLocaleString() +" - " + (max[1][2]).toLocaleString(),
+					"1 - " + (max[1][1]).toLocaleString()];
 		var html = "<p><b>"+ field +"</b></p>";
 		var color = color2
 		for(i=0;i<5;i++){
@@ -126,7 +134,11 @@ function init(){
 	legends3.update3 = function (field){
 		if(!(field)){field = init_field}
 		var max = getMax(col_max,field);
-		var labels = [max[1][4]+1 + " - " + max[0],max[1][3]+1 + " - " + max[1][4],max[1][2]+1 + " - " + max[1][3],max[1][1]+1 +" - " + max[1][2],"1 - " + max[1][1]];
+		var labels = [(max[1][4]+1).toLocaleString() + " - " + (max[0]).toLocaleString(),
+					(max[1][3]+1).toLocaleString() + " - " + (max[1][4]).toLocaleString(),
+					(max[1][2]+1).toLocaleString() + " - " + (max[1][3]).toLocaleString(),
+					(max[1][1]+1).toLocaleString() +" - " + (max[1][2]).toLocaleString(),
+					"1 - " + (max[1][1]).toLocaleString()];
 		var html = "<p><b>"+ field +"</b></p>";
 		var color = color3
 		for(i=0;i<5;i++){
@@ -157,7 +169,7 @@ function init(){
 
 function getOnEachFeature(feature, layer) {
 	layer.bindPopup("<b>" + feature.properties.DISTRICT
-				+ "</b><br/>"+ field +": " + getData(NRCS_data,feature.properties.OCHA_PCODE,field));
+				+ "</b><br/>"+ field +": " + getData(NRCS_data,feature.properties.OCHA_PCODE,field).toLocaleString());
     layer.on({
         mouseover: onMouseOver,
 		mouseout: onMouseOut,
