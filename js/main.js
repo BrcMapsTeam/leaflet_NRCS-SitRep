@@ -245,8 +245,6 @@ function onMouseOver(e) {
 }
 
 function onPopupOpen(e) {
-	onMouseOver(e);
-	window.popup_open = true;
 	var temp_field = e.popup._content.match(/(<br\/>).+(:)/g)[0];
 	temp_field = temp_field.slice(5,temp_field.length - 1);
 	console.log(temp_field);
@@ -262,6 +260,8 @@ function onPopupOpen(e) {
 		map1.closePopup();
 		map2.closePopup();
 	}
+	onMouseOver(e);
+	window.popup_open = true;
 }
 
 function onMouseOut() {
