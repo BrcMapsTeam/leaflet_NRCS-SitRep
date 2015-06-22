@@ -1,5 +1,7 @@
 function init(){
-
+	
+	window.popup_open = false;
+	
     var base_osm1 = L.tileLayer(
     		'http://{s}x={x}&y={y}&z={z}',{
 			subdomains: ['openmapsurfer.uni-hd.de/tiles/roads/', 
@@ -171,8 +173,10 @@ function getOnEachFeature(feature, layer) {
 	layer.bindPopup("<b>" + feature.properties.DISTRICT
 				+ "</b><br/>"+ field +": " + getData(NRCS_data,feature.properties.OCHA_PCODE,field).toLocaleString());
     layer.on({
-        mouseover: onMouseOver,
+        mouseover: onMouseOver,		
 		mouseout: onMouseOut,
+		popupopen: onPopupOpen,
+		popupclose: onPopupClose,
 		click: zoomToFeature
     });
 }
@@ -203,63 +207,91 @@ function zoomToFeature(e) {
 }		
 
 function onMouseOver(e) {
-	document.getElementById("dmg_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
-	for(k=1;k<8;k++){
-		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header1[(k-1)]);
-		var temp_data2 = temp_data1 ? temp_data1 : 0;
-		var temp_id1 = "dmg_dis_"+k.toString();
-		var temp_id2 = "dmg_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
-		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
-		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
-		"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
-	 }
-	document.getElementById("dist_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
-	for(k=1;k<8;k++){
-		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header2[(k-1)]);
-		var temp_data2 = temp_data1 ? temp_data1 : 0;
-		var temp_id1 = "dist_dis_"+k.toString();
-		var temp_id2 = "dist_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
-		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
-		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
-		"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
-	 }	
-	document.getElementById("vol_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
-	for(k=1;k<11;k++){
-		var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header3[(k-1)]);
-		var temp_data2 = temp_data1 ? temp_data1 : 0;
-		var temp_id1 = "vol_dis_"+k.toString();
-		var temp_id2 = "vol_full_"+k.toString();
-		var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
-		var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
-		document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
-		"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
-	 }	
+	if(!popup_open){
+		document.getElementById("dmg_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
+		for(k=1;k<8;k++){
+			var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header1[(k-1)]);
+			var temp_data2 = temp_data1 ? temp_data1 : 0;
+			var temp_id1 = "dmg_dis_"+k.toString();
+			var temp_id2 = "dmg_full_"+k.toString();
+			var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+			var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+			document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+			"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+		 }
+		document.getElementById("dist_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
+		for(k=1;k<8;k++){
+			var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header2[(k-1)]);
+			var temp_data2 = temp_data1 ? temp_data1 : 0;
+			var temp_id1 = "dist_dis_"+k.toString();
+			var temp_id2 = "dist_full_"+k.toString();
+			var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+			var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+			document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+			"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+		 }	
+		document.getElementById("vol_dis").innerHTML = "<b>" + e.target.feature.properties.DISTRICT + "<b/>";
+		for(k=1;k<11;k++){
+			var temp_data1 = getData(NRCS_data,e.target.feature.properties.OCHA_PCODE,col_header3[(k-1)]);
+			var temp_data2 = temp_data1 ? temp_data1 : 0;
+			var temp_id1 = "vol_dis_"+k.toString();
+			var temp_id2 = "vol_full_"+k.toString();
+			var temp_value1 = Math.round(temp_data2/ parseInt(document.getElementById(temp_id2).innerHTML.replace(/[\.,]/g, ""))*100);
+			var temp_value2 = !(temp_value1) ? "00" : ("00"+ temp_value1).slice(-2); 
+			document.getElementById(temp_id1).innerHTML = "" + temp_data2.toLocaleString() + "<small> | </small>" + temp_value2 + "<small>%</small>"+
+			"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress style='height: 5px' value='"+parseInt(temp_value2)+"' max='"+100+"'></progress></div></div>";
+		 }
+	}
+}
+
+function onPopupOpen(e) {
+	var temp_field = e.popup._content.match(/(<br\/>).+(:)/g)[0];
+	temp_field = temp_field.slice(5,temp_field.length - 1);
+	console.log(temp_field);
+	console.log(col_header1);
+	console.log(col_header1.indexOf(temp_field) > -1);
+	if(col_header1.indexOf(temp_field) > -1){
+		map2.closePopup();
+		map3.closePopup();
+	}else if(col_header2.indexOf(temp_field) > -1){
+		map1.closePopup();
+		map3.closePopup();
+	}else{
+		map1.closePopup();
+		map2.closePopup();
+	}
+	onMouseOver(e);
+	window.popup_open = true;
 }
 
 function onMouseOut() {
-	document.getElementById("dmg_dis").innerHTML = "<b>District<b/>";
-	for(k=1;k<8;k++){
-		var temp_id1 = "dmg_dis_"+k.toString();
-		var temp_value = 0;
-		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
-		"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
-	 }
-	document.getElementById("dist_dis").innerHTML = "<b>District<b/>";
-	for(k=1;k<8;k++){
-		var temp_id1 = "dist_dis_"+k.toString();
-		var temp_value = 0;
-		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
-		"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
-	}	
-	document.getElementById("vol_dis").innerHTML = "<b>District<b/>";
-	for(k=1;k<11;k++){
-		var temp_id1 = "vol_dis_"+k.toString();
-		var temp_value = 0;
-		document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
-		"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+	if(!popup_open){	
+		document.getElementById("dmg_dis").innerHTML = "<b>District<b/>";
+		for(k=1;k<8;k++){
+			var temp_id1 = "dmg_dis_"+k.toString();
+			var temp_value = 0;
+			document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+			"<div style='width:75%; line-height:25%' class='styled1' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+		 }
+		document.getElementById("dist_dis").innerHTML = "<b>District<b/>";
+		for(k=1;k<8;k++){
+			var temp_id1 = "dist_dis_"+k.toString();
+			var temp_value = 0;
+			document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+			"<div style='width:75%; line-height:25%' class='styled2' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+		}	
+		document.getElementById("vol_dis").innerHTML = "<b>District<b/>";
+		for(k=1;k<11;k++){
+			var temp_id1 = "vol_dis_"+k.toString();
+			var temp_value = 0;
+			document.getElementById(temp_id1).innerHTML = "- <small>|</small> 00<small>%</small>" + 
+			"<div style='width:75%; line-height:25%' class='styled3' align='right'><progress value='"+temp_value+"' max='"+100+"'></progress></div></div>";
+		}
 	}
+}
+
+function onPopupClose(e) {
+	window.popup_open = false;
 }
     
 var maps = init();
