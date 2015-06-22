@@ -589,7 +589,7 @@ var NRCS_data = [
     "Affected Families":null,
     "Displaced Families":34,
     "Fully Destroyed Houses":7,
-    "Partially Destroyed Houses":-7,
+    "Partially Destroyed Houses":null,
     "NFRI-Full-set":5,
     "Tarpaulin":29,
     "Blankets":null,
