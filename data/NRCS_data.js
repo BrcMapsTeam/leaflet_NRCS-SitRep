@@ -32,7 +32,7 @@ var NRCS_data = [
     "Id":2,
     "Pcode":"C-BAG-25",
     "Districts":"Lalitpur",
-    "Dead People":179,
+    "Dead People":180,
     "Missing People":null,
     "Injured People":3505,
     "Affected Families":35648,
@@ -69,7 +69,7 @@ var NRCS_data = [
     "Fully Destroyed Houses":18900,
     "Partially Destroyed Houses":9091,
     "NFRI-Full-set":1112,
-    "Tarpaulin":6434,
+    "Tarpaulin":6611,
     "Blankets":700,
     "ORS":5000,
     "Hygiene-kits":670,
@@ -127,10 +127,10 @@ var NRCS_data = [
     "Fully Destroyed Houses":47997,
     "Partially Destroyed Houses":11478,
     "NFRI-Full-set":null,
-    "Tarpaulin":3513,
-    "Blankets":711,
+    "Tarpaulin":4441,
+    "Blankets":739,
     "ORS":13600,
-    "Hygiene-kits":121,
+    "Hygiene-kits":3392,
     "Aqua-Tab":4400,
     "Soap":5472,
     "FA":270,
@@ -177,7 +177,7 @@ var NRCS_data = [
     "Id":7,
     "Pcode":"C-BAG-28",
     "Districts":"Nuwakot",
-    "Dead People":1104,
+    "Dead People":1105,
     "Missing People":15,
     "Injured People":1570,
     "Affected Families":74999,
@@ -185,8 +185,8 @@ var NRCS_data = [
     "Fully Destroyed Houses":71813,
     "Partially Destroyed Houses":3186,
     "NFRI-Full-set":null,
-    "Tarpaulin":2585,
-    "Blankets":1395,
+    "Tarpaulin":3405,
+    "Blankets":2125,
     "ORS":10800,
     "Hygiene-kits":20,
     "Aqua-Tab":6500,
@@ -206,7 +206,7 @@ var NRCS_data = [
     "Id":8,
     "Pcode":"C-JAN-22",
     "Districts":"Dolakha",
-    "Dead People":176,
+    "Dead People":177,
     "Missing People":12,
     "Injured People":259,
     "Affected Families":57744,
@@ -258,7 +258,7 @@ var NRCS_data = [
     "DDRT":15,
     "Other":163,
     "International Delegates/Volunteers":3,
-    "All":606
+    "All":66
   },
   {
     "Id":10,
@@ -271,7 +271,7 @@ var NRCS_data = [
     "Displaced Families":8952,
     "Fully Destroyed Houses":8557,
     "Partially Destroyed Houses":395,
-    "NFRI-Full-set":null,
+    "NFRI-Full-set":237,
     "Tarpaulin":1810,
     "Blankets":1150,
     "ORS":16600,
@@ -589,7 +589,7 @@ var NRCS_data = [
     "Affected Families":null,
     "Displaced Families":34,
     "Fully Destroyed Houses":7,
-    "Partially Destroyed Houses":null,
+    "Partially Destroyed Houses":-7,
     "NFRI-Full-set":5,
     "Tarpaulin":29,
     "Blankets":null,
@@ -1128,7 +1128,7 @@ var NRCS_data = [
     "DDRT":9,
     "Other":14,
     "International Delegates/Volunteers":null,
-    "All":60
+    "All":6
   },
   {
     "Id":40,
@@ -1215,7 +1215,7 @@ var NRCS_data = [
     "DDRT":10,
     "Other":40,
     "International Delegates/Volunteers":null,
-    "All":60
+    "All":6
   },
   {
     "Id":43,
@@ -1244,7 +1244,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":20,
     "International Delegates/Volunteers":null,
-    "All":30
+    "All":3
   },
   {
     "Id":44,
@@ -1389,7 +1389,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":40,
     "International Delegates/Volunteers":null,
-    "All":60
+    "All":6
   },
   {
     "Id":49,
