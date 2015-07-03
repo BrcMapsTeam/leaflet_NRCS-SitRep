@@ -1,5 +1,4 @@
 var NRCS_data = [
-  [
   {
     "Id":1,
     "Pcode":"C-BAG-27",
