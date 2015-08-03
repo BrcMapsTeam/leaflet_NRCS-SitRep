@@ -26,8 +26,7 @@ var NRCS_data = [
     "DDRT":80,
     "Other":375,
     "International Delegates/Volunteers":null,
-    "All":1559,
-    "FIELD28":""
+    "All":1559
   },
   {
     "Id":2,
@@ -56,8 +55,7 @@ var NRCS_data = [
     "DDRT":36,
     "Other":232,
     "International Delegates/Volunteers":null,
-    "All":894,
-    "FIELD28":""
+    "All":894
   },
   {
     "Id":3,
@@ -86,8 +84,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":174,
     "International Delegates/Volunteers":null,
-    "All":869,
-    "FIELD28":""
+    "All":869
   },
   {
     "Id":4,
@@ -116,8 +113,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":213,
     "International Delegates/Volunteers":11,
-    "All":352,
-    "FIELD28":""
+    "All":352
   },
   {
     "Id":5,
@@ -146,8 +142,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":60,
     "International Delegates/Volunteers":2,
-    "All":338,
-    "FIELD28":""
+    "All":338
   },
   {
     "Id":6,
@@ -176,8 +171,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":60,
     "International Delegates/Volunteers":2,
-    "All":1131,
-    "FIELD28":""
+    "All":1131
   },
   {
     "Id":7,
@@ -206,8 +200,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":82,
     "International Delegates/Volunteers":2,
-    "All":399,
-    "FIELD28":""
+    "All":399
   },
   {
     "Id":8,
@@ -236,8 +229,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":50,
     "International Delegates/Volunteers":null,
-    "All":216,
-    "FIELD28":""
+    "All":216
   },
   {
     "Id":9,
@@ -266,8 +258,7 @@ var NRCS_data = [
     "DDRT":15,
     "Other":163,
     "International Delegates/Volunteers":3,
-    "All":606,
-    "FIELD28":""
+    "All":606
   },
   {
     "Id":10,
@@ -296,8 +287,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":15,
     "International Delegates/Volunteers":null,
-    "All":116,
-    "FIELD28":""
+    "All":116
   },
   {
     "Id":11,
@@ -326,8 +316,7 @@ var NRCS_data = [
     "DDRT":20,
     "Other":67,
     "International Delegates/Volunteers":3,
-    "All":429,
-    "FIELD28":""
+    "All":429
   },
   {
     "Id":12,
@@ -356,8 +345,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":1,
-    "FIELD28":""
+    "All":1
   },
   {
     "Id":13,
@@ -386,8 +374,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":90,
     "International Delegates/Volunteers":null,
-    "All":192,
-    "FIELD28":""
+    "All":192
   },
   {
     "Id":14,
@@ -416,8 +403,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":4,
     "International Delegates/Volunteers":null,
-    "All":5,
-    "FIELD28":""
+    "All":5
   },
   {
     "Id":15,
@@ -446,8 +432,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":37,
     "International Delegates/Volunteers":null,
-    "All":38,
-    "FIELD28":""
+    "All":38
   },
   {
     "Id":16,
@@ -476,8 +461,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":1,
-    "FIELD28":""
+    "All":1
   },
   {
     "Id":17,
@@ -506,8 +490,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":20,
     "International Delegates/Volunteers":null,
-    "All":21,
-    "FIELD28":""
+    "All":21
   },
   {
     "Id":18,
@@ -536,8 +519,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":175,
     "International Delegates/Volunteers":null,
-    "All":231,
-    "FIELD28":""
+    "All":231
   },
   {
     "Id":19,
@@ -566,8 +548,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":77,
-    "FIELD28":""
+    "All":77
   },
   {
     "Id":20,
@@ -596,8 +577,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":1,
-    "FIELD28":""
+    "All":1
   },
   {
     "Id":21,
@@ -626,8 +606,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":22,
@@ -656,8 +635,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":17,
-    "FIELD28":""
+    "All":17
   },
   {
     "Id":23,
@@ -686,8 +664,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":24,
@@ -716,8 +693,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":25,
@@ -746,8 +722,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":26,
@@ -776,8 +751,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":27,
@@ -806,8 +780,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":28,
@@ -836,8 +809,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":29,
@@ -866,8 +838,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":30,
@@ -896,8 +867,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":31,
@@ -926,8 +896,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":1,
-    "FIELD28":""
+    "All":1
   },
   {
     "Id":32,
@@ -956,8 +925,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":17,
-    "FIELD28":""
+    "All":17
   },
   {
     "Id":33,
@@ -986,8 +954,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":15,
     "International Delegates/Volunteers":null,
-    "All":15,
-    "FIELD28":""
+    "All":15
   },
   {
     "Id":34,
@@ -1016,8 +983,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":15,
     "International Delegates/Volunteers":null,
-    "All":15,
-    "FIELD28":""
+    "All":15
   },
   {
     "Id":35,
@@ -1046,8 +1012,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":48,
     "International Delegates/Volunteers":null,
-    "All":48,
-    "FIELD28":""
+    "All":48
   },
   {
     "Id":36,
@@ -1076,8 +1041,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":115,
     "International Delegates/Volunteers":null,
-    "All":126,
-    "FIELD28":""
+    "All":126
   },
   {
     "Id":37,
@@ -1106,8 +1070,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":38,
@@ -1136,8 +1099,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":39,
@@ -1166,8 +1128,7 @@ var NRCS_data = [
     "DDRT":9,
     "Other":14,
     "International Delegates/Volunteers":null,
-    "All":60,
-    "FIELD28":""
+    "All":60
   },
   {
     "Id":40,
@@ -1196,8 +1157,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":19,
     "International Delegates/Volunteers":null,
-    "All":26,
-    "FIELD28":""
+    "All":26
   },
   {
     "Id":41,
@@ -1226,8 +1186,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":4,
     "International Delegates/Volunteers":null,
-    "All":4,
-    "FIELD28":""
+    "All":4
   },
   {
     "Id":42,
@@ -1256,8 +1215,7 @@ var NRCS_data = [
     "DDRT":10,
     "Other":40,
     "International Delegates/Volunteers":null,
-    "All":60,
-    "FIELD28":""
+    "All":60
   },
   {
     "Id":43,
@@ -1286,8 +1244,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":20,
     "International Delegates/Volunteers":null,
-    "All":30,
-    "FIELD28":""
+    "All":30
   },
   {
     "Id":44,
@@ -1316,8 +1273,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":4,
     "International Delegates/Volunteers":null,
-    "All":15,
-    "FIELD28":""
+    "All":15
   },
   {
     "Id":45,
@@ -1346,8 +1302,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":46,
@@ -1376,8 +1331,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":47,
@@ -1406,8 +1360,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":48,
@@ -1436,8 +1389,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":40,
     "International Delegates/Volunteers":null,
-    "All":60,
-    "FIELD28":""
+    "All":60
   },
   {
     "Id":49,
@@ -1466,8 +1418,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":50,
@@ -1496,8 +1447,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":51,
@@ -1526,8 +1476,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":52,
@@ -1556,8 +1505,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":53,
@@ -1586,8 +1534,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":54,
@@ -1616,8 +1563,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":55,
@@ -1646,8 +1592,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":56,
@@ -1676,8 +1621,7 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   },
   {
     "Id":57,
@@ -1706,7 +1650,6 @@ var NRCS_data = [
     "DDRT":null,
     "Other":null,
     "International Delegates/Volunteers":null,
-    "All":null,
-    "FIELD28":""
+    "All":null
   }
 ];
